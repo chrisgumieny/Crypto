@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+</head>
+
+<h2 style="text-align:center;">Popular Crypto News</h2>
+
+
+<button class="accordion">Bitcoin (BTC)</button>
+<div class="panel">
+    <a href="https://www.thestreet.com/economonitor/latin-america/el-salvador-is-first-country-to-adopt-bitcoin">El Salvador is First Country to Adopt Bitcoin</a>
+    <br><a href="https://www.wsj.com/articles/bitcoin-on-the-balance-sheet-is-an-accounting-headache-for-tesla-others-11623663001">Bitcoin on the Balance Sheet Is an Accounting Headache for Tesla, Others</a>
+    <br><a href="https://www.cnbc.com/2021/06/14/bitcoin-is-bubble-but-oil-is-most-ignored-bull-market-rich-bernstein-says.html">All-star investor Rich Bernstein warns bitcoin is a bubble, sees oil as the most ignored bull market</a>
+</div>
+
+<button class="accordion">Dogecoin (DOGE)</button>
+<div class="panel">
+    <a href="https://finance.yahoo.com/news/mark-cuban-talks-dogecoin-ve-163148875.html">Mark Cuban Talks Dogecoin: ‘You’ve Got To Know Why You’re Investing’</a>
+    <br><a href="https://www.forbes.com/sites/billybambrough/2021/06/13/move-over-dogecoin-tesla-billionaire-elon-musk-has-suddenly-sent-the-bitcoin-price-sharpy-higher/?sh=54d2e8153452">Move Over Dogecoin—Tesla Billionaire Elon Musk Has Suddenly Sent The Bitcoin Price Sharply Higher</a>
+    <br><a href="https://www.nbcnews.com/pop-culture/pop-culture-news/iconic-doge-meme-nft-breaks-records-selling-roughly-4-million-n1270161">Iconic 'Doge' meme NFT breaks record, selling for $4 million</a>
+</div>
+
+<button class="accordion">Ethereum (ETH)</button>
+<div class="panel">
+    <a href="https://www.coindesk.com/bitcoin-fund-outflows-stabilize-investors-exit-ether">Bitcoin Fund Outflows Slow but Investors Start Exiting Ether Funds</a>
+    <br><a href="https://finance.yahoo.com/news/nearly-25-ethereum-locked-smart-051423561.html">Nearly 25% of All Ethereum Locked in Smart Contracts</a>
+    <br><a href="https://www.coindesk.com/defi-projects-continue-flocking-to-layer-2-solution-polygon">DeFi Projects Continue Flocking to Layer 2 Solution Polygon</a>
+</div>
+
+<button class="accordion">Litecoin (LTC)</button>
+<div class="panel">
+    <a href=""></a>
+    <br><a href=""></a>
+    <br><a href=""></a>
+</div>
+
+<button class="accordion">Cardano (ADA)</button>
+<div class="panel">
+    <a href=""></a>
+    <br><a href=""></a>
+    <br><a href=""></a>
+</div>
+
+<button class="accordion">Polkadot (DOT)</button>
+<div class="panel">
+    <a href=""></a>
+    <br><a href=""></a>
+    <br><a href=""></a>
+</div>
+
+<button class="accordion">Bitcoin Cash (BCH)</button>
+<div class="panel">
+    <a href=""></a>
+    <br><a href=""></a>
+    <br><a href=""></a>
+</div>
+
+<button class="accordion">Stellar (XLM)</button>
+<div class="panel">
+    <a href=""></a>
+    <br><a href=""></a>
+    <br><a href=""></a>
+</div>
+
+<button class="accordion">Binance Coin (BNB)</button>
+<div class="panel">
+    <a href=""></a>
+    <br><a href=""></a>
+    <br><a href=""></a>
+</div>
+
+<button class="accordion">Monero (XMR)</button>
+<div class="panel">
+    <a href=""></a>
+    <br><a href=""></a>
+    <br><a href=""></a>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
