@@ -61,8 +61,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
+### Deployment -- https://create-react-app.dev/docs/deployment/#firebase
 
 Install the Firebase CLI if you haven’t already by running `npm install -g firebase-tools` 
 Sign up for a Firebase account and create a new project.
@@ -72,7 +71,14 @@ Then run the `firebase init` command from your project’s root. You need to cho
 
 IMPORTANT: you need to set proper HTTP caching headers for service-worker.js file in firebase.json file or you will not be able to see changes after first deployment (issue #2440). It should be added inside "hosting" key like next:
 
-
+`{
+  "hosting": {
+    ...
+    "headers": [
+      {"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
+    ]
+    ...
+    `
 
 After this use the command `npm run build`
 Now, after you create a production build with `npm run build`, you can deploy it by running `firebase deploy`.
