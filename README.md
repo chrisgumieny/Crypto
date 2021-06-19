@@ -63,7 +63,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+Install the Firebase CLI if you haven’t already by running `npm install -g firebase-tools` 
+Sign up for a Firebase account and create a new project.
+Run firebase login and login with your previous created Firebase account.
+
+Then run the `firebase init` command from your project’s root. You need to choose the Hosting: Configure and deploy Firebase Hosting sites and choose the Firebase project you created in the previous step. You will need to agree with database.rules.json being created, choose build as the public directory, and also agree to Configure as a single-page app by replying with y.
+
+IMPORTANT: you need to set proper HTTP caching headers for service-worker.js file in firebase.json file or you will not be able to see changes after first deployment (issue #2440). It should be added inside "hosting" key like next:
+
+
+
+After this use the command `npm run build`
+Now, after you create a production build with `npm run build`, you can deploy it by running `firebase deploy`.
+
+
+For more details 
+https://create-react-app.dev/docs/deployment/#firebase
 
 ### `npm run build` fails to minify
 
