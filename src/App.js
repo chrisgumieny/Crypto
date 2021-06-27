@@ -9,6 +9,8 @@ import ForgotPassword from "./components/ForgotPassword"
 import Register from "./components/Register"
 import { HeaderToolbar } from "./components/Header"
 import { Profile } from "./components/Profile"
+import { FirstPartyEducation } from "./components/FirstPartyEducation"
+import { ThirdPartyEducation } from "./components/ThirdPartyEducation"
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
               <Route path="/register"> <Register /> </Route>
               <Route path="/forgotpassword"> <ForgotPassword /> </Route>
               <PrivateRoute path="/profile"> <Profile /> </PrivateRoute>
+              <Route path="/firstpartyeducation"> <FirstPartyEducation /> </Route>
+              <Route path="/thirdpartyeducation"> <ThirdPartyEducation /> </Route>
               <PrivateRoute path="/"> <Home /> </PrivateRoute>
             </Switch>
           </div>
