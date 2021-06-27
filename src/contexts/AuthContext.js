@@ -1,10 +1,13 @@
-import React, { useContext, useState, useEffect }from "react"
+import React, { useContext, useState, useEffect, createContext } from "react"
 import { auth } from "../firebase" // from firebase.js file 
 
 // create context (used inside of provider)
-const AuthContext = React.createContext()
+// global state store
+const AuthContext = createContext()
 
 // function allows us to use Auth context 
+// This is a custom hook that we created so that we can access auth throughout
+// the entire application
 export function useAuth() {
     return useContext(AuthContext)
 }
@@ -23,18 +26,18 @@ export function AuthProvider({ children }) {
     function register(email, password) {
         return auth.createUserWithEmailAndPassword(email, password)
     }
-    
+
     // useEffect so it only runs once  
     useEffect(() => {
         // this function will call a method that will unsub 
         const unsubscribe = auth.onAuthStateChanged(user => {
-          setCurrentUser(user)
-          setLoading(false)
+            setCurrentUser(user)
+            setLoading(false)
         })
         // unsub from onAuthStateChanged whenever we unmount this component 
         return unsubscribe
     }, [])
-    
+
     // function for user login, sings in to account
     function login(email, password) {
         return auth.signInWithEmailAndPassword(email, password)
@@ -50,13 +53,13 @@ export function AuthProvider({ children }) {
     function passwordReset(email) {
         return auth.sendPasswordResetEmail(email)
     }
-    
+
     //  user info
     const value = {
         currentUser,
         register,
         login,
-        logout, 
+        logout,
         passwordReset
     }
 
@@ -64,7 +67,7 @@ export function AuthProvider({ children }) {
     return (
         // if not loading then render out the children
         <AuthContext.Provider value={value}>
-            { !loading && children }
+            {!loading && children}
         </AuthContext.Provider>
     )
 }
