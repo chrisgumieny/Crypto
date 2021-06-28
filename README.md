@@ -90,3 +90,5 @@ https://create-react-app.dev/docs/deployment/#firebase
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+React Bootstrap Documentation: https://react-bootstrap.github.io/components/navbar/
