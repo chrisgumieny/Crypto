@@ -23,7 +23,7 @@ export default function Register() {
         // password and confirm password must be equal
         if (passwordRef.current.value !== confirmPasswordRef.current.value) {
             // return error 
-            return setError("ERROR: passwords do not match ")
+            return setError("ERROR: Passwords do not match ")
         }
         try {
             // set error back to empty string 
@@ -32,12 +32,12 @@ export default function Register() {
             setLoading(true)
             // call register function from AuthContext
             await register(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push("/profile")
 
         }
         catch {
             // error message 
-            setError("ERROR: no account was created")
+            setError("ERROR: Failed to create account")
         }
 
         // after all handling is done 
