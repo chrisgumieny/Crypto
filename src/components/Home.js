@@ -20,7 +20,7 @@ export default function Home() {
     }
     catch {
       //error message
-      setError("ERROR: failed to log out of account")
+      setError("ERROR: Failed to log out of account")
     }
   }
 
