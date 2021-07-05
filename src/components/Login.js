@@ -24,12 +24,12 @@ export default function Login() {
             setLoading(true)
             // call login function from AuthContext
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push("/profile")
 
         }
         catch {
             // error message 
-            setError("ERROR: failed to log in to account")
+            setError("ERROR: Failed login attempt")
         }
         // after all handling is done 
         setLoading(false)

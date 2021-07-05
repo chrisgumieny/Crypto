@@ -8,10 +8,9 @@ import PrivateRoute from "./components/PrivateRoute"
 import ForgotPassword from "./components/ForgotPassword"
 import Register from "./components/Register"
 import { HeaderToolbar } from "./components/Header"
-import { Profile } from "./components/Profile"
+import Profile from "./components/Profile"
 import { FirstPartyEducation } from "./components/FirstPartyEducation"
 import { ThirdPartyEducation } from "./components/ThirdPartyEducation"
-
 
 function App() {
   return (
@@ -26,10 +25,12 @@ function App() {
               <Route path="/login"> <Login /> </Route>
               <Route path="/register"> <Register /> </Route>
               <Route path="/forgotpassword"> <ForgotPassword /> </Route>
-              <PrivateRoute path="/profile"> <Profile /> </PrivateRoute>
+              {/*locking down profile*/}
+              <PrivateRoute path="/profile" component={Profile} />
               <Route path="/firstpartyeducation"> <FirstPartyEducation /> </Route>
               <Route path="/thirdpartyeducation"> <ThirdPartyEducation /> </Route>
-              <PrivateRoute path="/"> <Home /> </PrivateRoute>
+              {/*  locking down home */}
+              <PrivateRoute exact path="/" component={Home} />
             </Switch>
           </div>
         </Router>

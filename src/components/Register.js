@@ -2,12 +2,14 @@ import React, { useRef, useState } from "react"
 import { Card, Form, Alert, Button, } from "react-bootstrap" // npm i bootstrap react-bootstrap
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import { postUser } from "../services/usersClient"
 
 // function used for register
 
 export default function Register() {
     // create refs
     const emailRef = useRef()
+    const phoneNumberRef = useRef()
     const passwordRef = useRef()
     const confirmPasswordRef = useRef()
     const { register } = useAuth() //const {register, currentUser} = useAuth() to check if working
@@ -23,7 +25,7 @@ export default function Register() {
         // password and confirm password must be equal
         if (passwordRef.current.value !== confirmPasswordRef.current.value) {
             // return error 
-            return setError("ERROR: passwords do not match ")
+            return setError("ERROR: Passwords do not match ")
         }
         try {
             // set error back to empty string 
@@ -31,13 +33,18 @@ export default function Register() {
             // set up loading state (only can create one account at the same time, cant keep clicking submit button)
             setLoading(true)
             // call register function from AuthContext
-            await register(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            const { email, uid } = (await register(emailRef.current.value, passwordRef.current.value)).user
+            await postUser({
+                userid: uid,
+                useremail: email,
+                userphonenumber: phoneNumberRef.current.value
+            })
+            history.push("/profile")
 
         }
         catch {
             // error message 
-            setError("ERROR: no account was created")
+            setError("ERROR: Failed to create account")
         }
 
         // after all handling is done 
@@ -68,6 +75,12 @@ export default function Register() {
                             <Form.Group id="email">
                                 <Form.Label>Email*</Form.Label>
                                 <Form.Control type="email" ref={emailRef} required />
+                            </Form.Group>
+
+                            {/* user phone number*/}
+                            <Form.Group id="tel">
+                                <Form.Label>Phone Number*</Form.Label>
+                                <Form.Control type="tel" pattern="^(+\d{1,2}\s)?(?\d{3})?[\s.-]\d{3}[\s.-]\d{4}$" ref={phoneNumberRef} required />
                             </Form.Group>
 
                             {/*user password */}

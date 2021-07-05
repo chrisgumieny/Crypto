@@ -29,12 +29,12 @@ export default function ForgotPassword() {
             setLoading(true)
             // call passwordReset function from AuthContext
             await passwordReset(emailRef.current.value,)
-            setMessage("reset link sent")
+            setMessage("Reset link sent to email")
 
         }
         catch {
             // error message 
-            setError("ERROR: failed to reset password")
+            setError("ERROR: Failed to reset password")
         }
 
         // after all handling is done 
