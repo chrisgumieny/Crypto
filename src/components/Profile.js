@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { Card, Alert, Button } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext";
 import { useHistory, Link } from "react-router-dom"
+import EmailSubmission from "../components/EmailSignup"
 
 const cryptos = ["Bitcoin", "Etherium", "Dogecoin"]
 
@@ -10,6 +11,7 @@ export default function Profile() {
     const [error, setError] = useState("")
     const { currentUser, logout } = useAuth()
     const history = useHistory()
+    const emailSubmit = useRef()
 
     // handle logout
     async function handleLogout() {
@@ -48,6 +50,13 @@ export default function Profile() {
                             </div>
 
                         </Card.Body>
+                    </Card>
+
+                    <br></br>
+                    
+                    <Card border="dark" >
+                        {/*Emai Submission Box*/}
+                        <EmailSubmission eSubmit={emailSubmit} userEmail={currentUser.email} />
                     </Card>
 
                 </Card.Body>
