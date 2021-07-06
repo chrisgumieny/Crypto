@@ -48,9 +48,9 @@ export default function ForgotPassword() {
 
             {/* Card will contain all our log in information  */}
             <Card>
-                <Card.Header>Crypto</Card.Header>
+                <Card.Header>Crypto Pro Password Reset</Card.Header>
                 <Card.Body>
-                    <h2 className="div-0">Reset Password </h2>
+                    <h2 className="text-center mb-3">Reset Password </h2>
 
 
                     {/* if error then we alert */}
@@ -66,25 +66,25 @@ export default function ForgotPassword() {
                             {/* user email*/}
                             <Form.Group id="email">
                                 <Form.Label>Email*</Form.Label>
-                                <Form.Control type="email" ref={emailRef} required />
+                                <Form.Control placeholder="email@email.com" type="email" ref={emailRef} required />
                             </Form.Group>
                         </div>
 
                         <div className="button">
                             {/* reset password button, loading because if loading do not want to resubmit form */}
-                            <Button disabled={loading} variant="primary" className="width100" type="submit" >
+                            <Button disabled={loading} variant="primary" className="w-100" type="submit" >
                                 Reset Password
                             </Button>
                         </div>
                     </Form>
                 </Card.Body>
             </Card>
-            {/* forgot password link */}
-            <div className="div-2">
+            {/* log in link */}
+            <div className="text-center mt-2">
                 <Link to="/login">Log in</Link>
             </div>
 
-            <div className="div-3">
+            <div className="text-center mt-2">
                 {/* if user needs to create an account send to register */}
                 <Link to="/register" > Create an Account</Link>
             </div>

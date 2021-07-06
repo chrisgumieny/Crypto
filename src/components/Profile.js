@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Card, Alert, Button } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext";
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 
 const cryptos = ["Bitcoin", "Etherium", "Dogecoin"]
 
@@ -27,7 +27,6 @@ export default function Profile() {
         }
     }
 
-
     return (
         <>
             <Card>
@@ -36,12 +35,27 @@ export default function Profile() {
 
                     {/* alert if cant log out*/}
                     {error && <Alert variant="danger">{error}</Alert>}
-                    {/* welcome user with email*/}
-                    <h4 className="div-0">User Email: {currentUser.email}</h4>
+
+                    <Card border="dark" className=" p-4" >
+                        <Card.Title  > User Information:</Card.Title>
+                        <Card.Body>
+                            Email: {currentUser.email}
+                            <br />
+                            Number: {currentUser.phoneNumber}
+
+                            <div className=" mt-2">
+                                <Link to="/profilechange">Change User Information</Link>
+                            </div>
+
+                        </Card.Body>
+                    </Card>
+
                 </Card.Body>
             </Card>
+
+
             {/* log out link */}
-            <div className="div-3">
+            <div className="w-100">
                 <Button variant="primary" onClick={handleLogout}> Log Out</Button>
             </div>
         </>
