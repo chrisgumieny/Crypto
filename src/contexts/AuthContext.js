@@ -54,13 +54,27 @@ export function AuthProvider({ children }) {
         return auth.sendPasswordResetEmail(email)
     }
 
+    // function to change email
+    // updates to new email
+    function changeEmail(email) {
+        return currentUser.updateEmail(email)
+    }
+
+    // function to change password
+    // updates to new password
+    function changePassword(password) {
+        return currentUser.updatePassword(password)
+    }
+
     //  user info
     const value = {
         currentUser,
         register,
         login,
         logout,
-        passwordReset
+        passwordReset,
+        changeEmail,
+        changePassword
     }
 
     // do not render any of the application until
