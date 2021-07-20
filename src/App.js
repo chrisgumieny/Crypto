@@ -11,6 +11,7 @@ import { HeaderToolbar } from "./components/Header"
 import Profile from "./components/Profile"
 import { FirstPartyEducation } from "./components/FirstPartyEducation"
 import { ThirdPartyEducation } from "./components/ThirdPartyEducation"
+import { Search } from "./components/Search"
 import Help from './components/Help'
 import ProfileChange from "./components/ProfileChange"
 
@@ -32,6 +33,7 @@ function App() {
               <PrivateRoute path="/profilechange" component={ProfileChange} />
               <Route path="/firstpartyeducation"> <FirstPartyEducation /> </Route>
               <Route path="/thirdpartyeducation"> <ThirdPartyEducation /> </Route>
+              <Route path="/search"> < Search /> </Route>
               <Route path="/help"> <Help /> </Route>
               <Route path="/"> <Home /> </Route>
             </Switch>
