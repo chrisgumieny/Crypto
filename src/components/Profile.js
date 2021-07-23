@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { Card, Alert, Button } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext";
 import { useHistory, Link } from "react-router-dom"
-import EmailSignupAssignment5 from "../components/EmailSignupAssignment5"
+import EmailSignup from "../components/EmailSignup"
 
 const cryptos = ["Bitcoin", "Etherium", "Dogecoin"]
 
@@ -56,7 +56,7 @@ export default function Profile() {
                     
                     <Card border="dark" >
                         {/*Emai Submission Box*/}
-                        <EmailSignupAssignment5 eSubmit={emailSubmit} userEmail={currentUser.email} />
+                        <EmailSignup eSubmit={emailSubmit} userEmail={currentUser.email} />
                     </Card>
 
                 </Card.Body>
