@@ -10,3 +10,17 @@ export async function postUser(request) {
     })
     return results.json();
 }
+
+// first attempt at specifically calling backend for updating subscription status
+// (not sure if this is correct)
+
+/*export async function updateStatus(request) {
+    const status = await fetch(`${baseURL}/updatesubscriptionstatus`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    })
+    return status.json();
+}*/

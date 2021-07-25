@@ -37,7 +37,8 @@ export default function Register() {
             await postUser({
                 userid: uid,
                 useremail: email,
-                userphonenumber: phoneNumberRef.current.value
+                userphonenumber: phoneNumberRef.current.value,
+                usersubscriptionstatus: false // new user is unsubscribed by default
             })
             history.push("/profile")
 

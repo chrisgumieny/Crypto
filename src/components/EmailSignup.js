@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Card, Form, Button } from "react-bootstrap"
+import { updateStatus } from "../services/usersClient"
 
 export const EmailSubmission = (props) => {
 
@@ -7,10 +8,10 @@ export const EmailSubmission = (props) => {
     const [emailSubmission, setEmailSubmission] = useState(sessionStorage.getItem('email') || "")
     const [subscriptionStatus, setSubscriptionStatus] = useState(sessionStorage.getItem('subscriptionStatus') || "Unsubscribed")
     const [SubButton, setSubButton] = useState("Subscribe")
+    const [error, setError] = useState("")
 
-
-    // Handling email submission 
-    function handleEmailSignup(e) {
+    // Handling email subscription submission 
+    async function handleEmailSignup(e) {
         e.preventDefault()
         
         // Updating values to the submitted email, new subscription status, and changing the button text
@@ -32,6 +33,24 @@ export const EmailSubmission = (props) => {
 
         sessionStorage.setItem('subscriptionStatus', subscriptionStatus)
         sessionStorage.setItem('email', emailSubmission)
+
+        // In the future there will be a test to see if database's status == new status (if statement)
+
+        try {
+            setError("")
+            setLoading(true)
+
+            // Calls update status function with user email + subscription status
+            await updateStatus({
+                currentuseremail: props.userEmail,
+                subscriptionstatus: subscriptionStatus
+            })
+            history.push("/profile")
+        }
+        catch {
+            setError("ERROR: Failed to update subscription status")
+        }
+        setLoading(false)
         
     }, [emailSubmission, subscriptionStatus])
 
@@ -49,6 +68,8 @@ export const EmailSubmission = (props) => {
             <Card>
                 <Card.Header> Email Signup</Card.Header>
                     <Card.Body>
+                            {/* error alerts */}
+                            {error && <Alert variant="danger">{error}</Alert>}
                             <Form onSubmit = {handleEmailSignup}> 
                                 <Form.Group>
                                     <Form.Label>Email address</Form.Label>
