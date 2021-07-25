@@ -3,8 +3,6 @@ import { Card } from "react-bootstrap" // npm i bootstrap react-bootstrap
 
 export const ThirdPartyEducation = () => {
 
-
-
     function retrieve(e){
         e.preventDefault()
 
