@@ -19,7 +19,7 @@ export const ThirdPartyEducation = () => {
       
         newsList.innerHTML = ''
       
-        const apiKey = '8577c03e48d246b3b0ca7329456e3e84'
+        const apiKey = ''
         
         let topic = input.value
         let url = `https://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}`
