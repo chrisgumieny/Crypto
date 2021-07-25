@@ -58,8 +58,9 @@ export default function ProfileChange() {
         <>
             {/* Card will contain all our profile update forms  */}
             <Card>
+                <Card.Header>Change User Information</Card.Header>
                 <Card.Body>
-                    <h2 className="text-center mb-3">Profile Changes</h2>
+                    <h2 className="text-center mb-3">Change User Information</h2>
 
                     {/* if error then we alert */}
                     {error && <Alert variant="danger">{error}</Alert>}

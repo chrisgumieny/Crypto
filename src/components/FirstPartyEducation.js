@@ -4,7 +4,7 @@ import { Card, Accordion, Button, ListGroup } from "react-bootstrap"
 export const FirstPartyEducation = () => {
 
     return (
-        <Card>
+        <Card className="mb-5">
             <Card.Header>First Party Education</Card.Header>
             <Accordion>
                 <Card>
