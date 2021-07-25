@@ -4,42 +4,22 @@ import { useAuth } from "../contexts/AuthContext";
 import { useHistory, Link } from "react-router-dom"
 import EmailSubmission from "../components/EmailSignup"
 
+
 const cryptos = ["Bitcoin", "Etherium", "Dogecoin"]
 
 
 export default function Profile() {
-    const [error, setError] = useState("")
-    const { currentUser, logout } = useAuth()
-    const history = useHistory()
+    const { currentUser } = useAuth()
     const emailSubmit = useRef()
-
-    // handle logout
-    async function handleLogout() {
-        setError("") // empty
-
-        try {
-            // wait for logout
-            await logout()
-            // go back to login page
-            history.push("/login")
-        }
-        catch {
-            //error message
-            setError("ERROR: Failed to log out of account")
-        }
-    }
 
     return (
         <>
-            <Card>
+            <Card className="mb-5">
                 <Card.Header> Profile</Card.Header>
                 <Card.Body>
 
-                    {/* alert if cant log out*/}
-                    {error && <Alert variant="danger">{error}</Alert>}
-
-                    <Card border="dark" className=" p-4" >
-                        <Card.Title  > User Information:</Card.Title>
+                    <Card border="dark"  >
+                        <Card.Header  > User Information:</Card.Header>
                         <Card.Body>
                             Email: {currentUser.email}
                             <br />
@@ -53,7 +33,7 @@ export default function Profile() {
                     </Card>
 
                     <br></br>
-                    
+
                     <Card border="dark" >
                         {/*Emai Submission Box*/}
                         <EmailSubmission eSubmit={emailSubmit} userEmail={currentUser.email} />
@@ -61,12 +41,6 @@ export default function Profile() {
 
                 </Card.Body>
             </Card>
-
-
-            {/* log out link */}
-            <div className="w-100">
-                <Button variant="primary" onClick={handleLogout}> Log Out</Button>
-            </div>
         </>
     )
 }

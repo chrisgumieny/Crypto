@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
 
-    <Card>
+    <Card className="mb-5">
       <Card.Header> Home</Card.Header>
       <Card.Body>
 
