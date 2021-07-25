@@ -43,8 +43,11 @@ export const HeaderToolbar = () => {
                     <Navbar.Toggle />
 
                     <Nav>
-                        {/* link to home page */}
-                        <Nav.Link href="/">Home</Nav.Link>
+                        <NavDropdown title="Home">
+                        <NavDropdown.Item href="/">Home Page</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/systemupdates">System Updates</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
 
 
@@ -57,7 +60,7 @@ export const HeaderToolbar = () => {
                                 <NavDropdown.Divider />
                                 {/* link to user profile */}
                                 <NavDropdown.Item href="/profile">Your Profile</NavDropdown.Item>
-                                <NavDropdown.Item href="/profilechange"> Change Profile Information</NavDropdown.Item>
+                                <NavDropdown.Item href="/profilechange"> Change User Information</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 {/* link to FAQ/Help */}
                                 <NavDropdown.Item href="/help">Help</NavDropdown.Item>
@@ -75,7 +78,7 @@ export const HeaderToolbar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/thirdpartyeducation">Third Party Education</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="/Search">Search</Nav.Link>
+                        <Nav.Link href="/Search">Cryptocurrency Search</Nav.Link>
                     </Nav>
 
 
@@ -85,7 +88,8 @@ export const HeaderToolbar = () => {
                             {isLoggedOut ? <Navbar.Text>
                                 {/* link to log in */}
                                 <Nav.Link href="/login">Log In</Nav.Link>
-
+                                {/* <Nav.Link href="/forgotpassword">Forgot Password</Nav.Link>
+                                <Nav.Link href="/register">Create an Account</Nav.Link> */}
                             </Navbar.Text> : null}
                         </Nav>
                     </Navbar.Collapse>

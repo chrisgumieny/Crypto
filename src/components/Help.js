@@ -3,7 +3,7 @@ import { Card, Accordion, Button, ListGroup } from "react-bootstrap"
 export default function Faq() {
 
     return (
-        <Card>
+        <Card className="mb-5">
             <Card.Header>Frequently Asked Questions</Card.Header>
             <Accordion>
                 <Card>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Card, Alert, Button } from "react-bootstrap"
 
 const Coin = ({
     name,
@@ -11,25 +12,26 @@ const Coin = ({
     priceChange
   }) => {
     return (
+      
       <div className='coin-container'>
         <div className='coin-row'>
           <div className='coin'>
             <img src={image} alt='crypto' />
             <h1>{name}</h1>
-            <p className='coin-symbol'>{symbol}</p>
+            <p className='coin-symbol'>Symbol: {symbol}</p>
           </div>
           <div className='coin-data'>
-            <p className='coin-price'>${price}</p>
-            <p className='coin-volume'>${volume.toLocaleString()}</p>
+            <p className='coin-price' >Coin Price: ${price}</p>
+            <p className='coin-volume'>Coin Volume: ${volume.toLocaleString()}</p>
   
             {priceChange < 0 ? (
-              <p className='coin-percent red'>{priceChange.toFixed(2)}%</p>
+              <p className='coin-percent red'>Percent Change: {priceChange.toFixed(2)}%</p>
             ) : (
-              <p className='coin-percent green'>{priceChange.toFixed(2)}%</p>
+              <p className='coin-percent green'>Percent Change: +{priceChange.toFixed(2)}%</p>
             )}
   
             <p className='coin-marketcap'>
-              Mkt Cap: ${marketcap.toLocaleString()}
+              Market Cap: ${marketcap.toLocaleString()}
             </p>
           </div>
         </div>
@@ -62,9 +64,11 @@ export const Search = () => {
   );
 
   return (
+    
     <div className='coin-app'>
       <div className='coin-search'>
-        <h1 className='coin-text'>Search a currency</h1>
+      <br></br>
+        <h4 className='coin-text'>Cryptocurrency Search</h4>
         <form>
           <input
             className='coin-input'
@@ -73,6 +77,7 @@ export const Search = () => {
             placeholder='Search'
           />
         </form>
+        <br></br>
       </div>
       {filteredCoins.map(coin => {
         return (
