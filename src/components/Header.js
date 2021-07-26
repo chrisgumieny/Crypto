@@ -35,7 +35,7 @@ export const HeaderToolbar = () => {
     return (
 
         <>
-            <div className="mt-5">
+            <div>
                 <Navbar bg="dark" variant="dark" className="text-center"  >
                     {/*<Navbar.Brand href="/home">Crypto Pro</Navbar.Brand> */}
                     {/* Crypto Pro header click -> home  */}
@@ -44,11 +44,15 @@ export const HeaderToolbar = () => {
 
                     <Nav>
                         <NavDropdown title="Home">
-                        <NavDropdown.Item href="/">Home Page</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="/systemupdates">System Updates</NavDropdown.Item>
+                            <NavDropdown.Item href="/">Home Page</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/systemupdates">System Updates</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+
+
+
+
 
 
                     {/* if user is logged in */}
@@ -79,7 +83,15 @@ export const HeaderToolbar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/thirdpartyeducation">Third Party Education</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="/Search">Cryptocurrency Search</Nav.Link>
+                    </Nav>
+
+                    <Nav>
+                        {/* drop down for crypto pages */}
+                        <NavDropdown title="Cryptocurrency" id="nav-dropdown">
+                            <NavDropdown.Item href="/search">Cryptocurrency Search</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/cryptochart">Cryptocurrency Chart</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
 
 
