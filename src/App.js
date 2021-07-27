@@ -40,9 +40,8 @@ function App() {
               <Route path="/help"> <Help /> </Route>
               <Route path="/systemupdates"> <SystemUpdates /> </Route>
               <Route path="/cryptochart"> <CryptoChart /> </Route>
-             
-              <Route path="/"> <Home /> </Route>
               <Route path="/policy"> <Policy /> </Route>
+              <Route path="/"> <Home /> </Route>
             </Switch>
           </div>
         </Router>

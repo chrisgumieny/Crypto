@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, Alert, Button } from "react-bootstrap"
+import { Card, CardGroup, Alert, Button } from "react-bootstrap"
 
 const Coin = ({
     name,
@@ -16,23 +16,42 @@ const Coin = ({
       <div className='coin-container'>
         <div className='coin-row'>
           <div className='coin'>
-            <img src={image} alt='crypto' />
-            <h1>{name}</h1>
-            <p className='coin-symbol'>Symbol: {symbol}</p>
-          </div>
-          <div className='coin-data'>
-            <p className='coin-price' >Coin Price: ${price}</p>
-            <p className='coin-volume'>Coin Volume: ${volume.toLocaleString()}</p>
-  
-            {priceChange < 0 ? (
-              <p className='coin-percent red'>Percent Change: {priceChange.toFixed(2)}%</p>
-            ) : (
-              <p className='coin-percent green'>Percent Change: +{priceChange.toFixed(2)}%</p>
-            )}
-  
-            <p className='coin-marketcap'>
-              Market Cap: ${marketcap.toLocaleString()}
-            </p>
+          <CardGroup style={{width: '81rem'}}>
+            <Card>
+              <Card.Footer style={{height: '4rem'}}>
+                <h6><img src={image} alt='crypto' width="20%"/>   {name}</h6>
+              </Card.Footer>
+            </Card>
+            <Card>
+              <Card.Footer style={{height: '4rem'}}>
+                <small  class="text-uppercase">{symbol}</small>
+              </Card.Footer>
+            </Card>
+            <Card>
+              <Card.Footer style={{height: '4rem'}}>
+                <small>${price}</small>
+              </Card.Footer>
+              </Card>
+              <Card>
+              <Card.Footer style={{height: '4rem'}}>
+                <small>${volume.toLocaleString()}</small>
+              </Card.Footer>
+            </Card>
+            <Card>
+              <Card.Footer style={{height: '4rem'}}>
+                <small>{priceChange < 0 ? (
+                  <p className='text-danger'>{priceChange.toFixed(2)}%</p>
+                    ) : (
+                  <p className='text-success'>+{priceChange.toFixed(2)}%</p>
+                    )}</small>
+              </Card.Footer>
+            </Card>
+            <Card>
+              <Card.Footer style={{height: '4rem'}}>
+                <small>${marketcap.toLocaleString()}</small>
+              </Card.Footer>
+            </Card>
+          </CardGroup>  
           </div>
         </div>
       </div>
@@ -67,8 +86,8 @@ export const Search = () => {
     
     <div className='coin-app'>
       <div className='coin-search'>
+      <Card.Header> Cryptocurrency Search</Card.Header> 
       <br></br>
-        <h4 className='coin-text'>Cryptocurrency Search</h4>
         <form>
           <input
             className='coin-input'
@@ -78,10 +97,42 @@ export const Search = () => {
           />
         </form>
         <br></br>
+        <CardGroup style={{width: '81rem'}}>
+          <Card>
+            <Card.Header>
+              <small>Coin</small>
+            </Card.Header>
+          </Card>
+          <Card>
+            <Card.Header>
+              <small>Symbol</small>
+            </Card.Header>
+          </Card>
+          <Card>
+            <Card.Header>
+              <small>Coin Price</small>
+            </Card.Header>
+          </Card>
+          <Card>
+            <Card.Header>
+              <small>Coin Volume</small>
+            </Card.Header>
+          </Card>
+          <Card>
+            <Card.Header>
+              <small className="text-muted">Percent Change</small>
+            </Card.Header>
+          </Card>
+          <Card>
+            <Card.Header>
+              <small className="text-muted">Market Cap</small>
+            </Card.Header>
+          </Card>
+        </CardGroup>
       </div>
       {filteredCoins.map(coin => {
         return (
-          <Coin
+          <Card><Coin
             key={coin.id}
             name={coin.name}
             price={coin.current_price}
@@ -90,7 +141,7 @@ export const Search = () => {
             volume={coin.market_cap}
             image={coin.image}
             priceChange={coin.price_change_percentage_24h}
-          />
+          /></Card>
         );
       })}
     </div>

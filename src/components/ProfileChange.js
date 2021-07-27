@@ -84,7 +84,7 @@ export default function ProfileChange() {
                         <Form.Group id="password-confirm">
                             <Form.Label>Password Confirmation</Form.Label>
                             <Form.Control placeholder="Leave this blank unless changing password" type="password" ref={confirmPasswordRef} />
-                        </Form.Group>
+                        </Form.Group> <br></br>
 
                         {/* update profile button, loading because if loading do not want to resubmit form */}
                         <Button disabled={loading} className="w-100" type="submit"> Change Account Information </Button>

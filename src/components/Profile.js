@@ -18,13 +18,11 @@ export default function Profile() {
                 <Card.Header> Profile</Card.Header>
                 <Card.Body>
 
-                    <Card border="dark"  >
+                    <Card>
                         <Card.Header  > User Information:</Card.Header>
                         <Card.Body>
                             Email: {currentUser.email}
                             <br />
-                            Number: {currentUser.phoneNumber}
-
                             <div className=" mt-2">
                                 <Link to="/profilechange">Change User Information</Link>
                             </div>
@@ -34,7 +32,7 @@ export default function Profile() {
 
                     <br></br>
 
-                    <Card border="dark" >
+                    <Card>
                         {/*Emai Submission Box*/}
                         <EmailSubmission eSubmit={emailSubmit} userEmail={currentUser.email} />
                     </Card>
