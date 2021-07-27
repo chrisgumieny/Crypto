@@ -14,9 +14,10 @@ import { ThirdPartyEducation } from "./components/ThirdPartyEducation"
 import { Search } from "./components/Search"
 import Help from "./components/Help"
 import ProfileChange from "./components/ProfileChange"
-import SystemUpdates from "./components/SystemUpdates" 
+import SystemUpdates from "./components/SystemUpdates"
 import CryptoChart from "./components/CryptoChart"
-import {Policy} from "./components/Policy"
+import { Policy } from "./components/Policy"
+import ContactUs from "./components/ContactUs"
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path="/systemupdates"> <SystemUpdates /> </Route>
               <Route path="/cryptochart"> <CryptoChart /> </Route>
               <Route path="/policy"> <Policy /> </Route>
+              <Route path="/contactus"> <ContactUs /> </Route>
               <Route path="/home"> <Home /> </Route>
               <Route path="/"> <Home /> </Route>
             </Switch>
