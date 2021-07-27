@@ -20,7 +20,7 @@ export default function CryptoChartHeader({ price, data }) {
     return (
       <>
         <Card.Body>
-          <Card.Text style={{ fontSize: '1.4em' }} > Select a cryptocurrency to see todays live price in USD and its price chart </Card.Text>
+          <Card.Text style={{ fontSize: '1.4em' }} > Select a cryptocurrency to see today's live price in USD and its price chart </Card.Text>
         </Card.Body>
       </>
     );
