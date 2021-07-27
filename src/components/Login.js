@@ -37,9 +37,9 @@ export default function Login() {
         <>
             {/* Card will contain all our log in information  */}
             <Card>
-                <Card.Header> Crypto Pro Login</Card.Header>
+                <Card.Header as="h4"> Crypto Pro Login</Card.Header>
                 <Card.Body>
-                    <h2 className="text-center mb-3">Log In </h2>
+                    <h5 className="text-center mb-3">Log In </h5>
 
                     {/* if error then we alert in red for danger */}
                     {error && <Alert variant="danger">{error}</Alert>}
@@ -66,7 +66,7 @@ export default function Login() {
 
 
                         {/* log in button, loading because if loading do not want to resubmit form */}
-                        <div className="button">
+                        <div className="button"> <br></br>
                             <Button disabled={loading} className="w-100" variant="primary" type="submit">Log In</Button>
                         </div>
                     </Form>

@@ -48,9 +48,9 @@ export default function ForgotPassword() {
 
             {/* Card will contain all our log in information  */}
             <Card>
-                <Card.Header>Crypto Pro Password Reset</Card.Header>
+                <Card.Header as="h4">Crypto Pro Password Reset</Card.Header>
                 <Card.Body>
-                    <h2 className="text-center mb-3">Reset Password </h2>
+                    <h5 className="text-center mb-3">Reset Password </h5>
 
 
                     {/* if error then we alert */}
@@ -68,7 +68,7 @@ export default function ForgotPassword() {
                                 <Form.Label>Email*</Form.Label>
                                 <Form.Control placeholder="email@email.com" type="email" ref={emailRef} required />
                             </Form.Group>
-                        </div>
+                        </div> <br></br>
 
                         <div className="button">
                             {/* reset password button, loading because if loading do not want to resubmit form */}

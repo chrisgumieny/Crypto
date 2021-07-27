@@ -5,7 +5,7 @@ export const FirstPartyEducation = () => {
 
     return (
         <Card className="mb-5">
-            <Card.Header>First Party Education</Card.Header>
+            <Card.Header as="h4">First Party Education</Card.Header>
             <Accordion>
                 <Card>
                     <Card.Header>

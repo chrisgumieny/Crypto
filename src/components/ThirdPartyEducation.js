@@ -52,7 +52,7 @@ export const ThirdPartyEducation = () => {
 
       return (
         <Card>
-            <Card.Header> Third Party Education</Card.Header>
+            <Card.Header as="h4"> Third Party Education</Card.Header>
             <Card.Body>
 
                 <form onSubmit={(e)=>retrieve(e)} className="search" action ="">

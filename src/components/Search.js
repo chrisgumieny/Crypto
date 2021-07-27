@@ -86,7 +86,7 @@ export const Search = () => {
     
     <div className='coin-app'>
       <div className='coin-search'>
-      <Card.Header> Cryptocurrency Search</Card.Header> 
+      <Card.Header as="h4"> Cryptocurrency Search</Card.Header> 
       <br></br>
         <form>
           <input
@@ -100,32 +100,32 @@ export const Search = () => {
         <CardGroup style={{width: '81rem'}}>
           <Card>
             <Card.Header>
-              <small>Coin</small>
+              <h6>Coin</h6>
             </Card.Header>
           </Card>
           <Card>
             <Card.Header>
-              <small>Symbol</small>
+              <h6>Symbol</h6>
             </Card.Header>
           </Card>
           <Card>
             <Card.Header>
-              <small>Coin Price</small>
+              <h6>Coin Price</h6>
             </Card.Header>
           </Card>
           <Card>
             <Card.Header>
-              <small>Coin Volume</small>
+              <h6>Coin Volume</h6>
             </Card.Header>
           </Card>
           <Card>
             <Card.Header>
-              <small className="text-muted">Percent Change</small>
+              <h6>Percent Change</h6>
             </Card.Header>
           </Card>
           <Card>
             <Card.Header>
-              <small className="text-muted">Market Cap</small>
+              <h6>Market Cap</h6>
             </Card.Header>
           </Card>
         </CardGroup>

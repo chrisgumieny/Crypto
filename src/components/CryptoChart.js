@@ -143,7 +143,7 @@ export default function CryptoChart() {
     return (
         <>
             <Card>
-                <Card.Header>Cryptocurrency Charts</Card.Header>
+                <Card.Header><h4>Cryptocurrency Charts</h4></Card.Header>
                 <Card.Body >
                     <Card.Body >
                         {

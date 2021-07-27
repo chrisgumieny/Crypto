@@ -133,13 +133,13 @@ export default function SystemUpdates() {
 
         <>
             <Card className="mb-5">
-                <Card.Header> System Updates</Card.Header>
+                <Card.Header as="h4"> System Updates</Card.Header>
                 <Card.Body>
 
                     {/* Upcoming Updates*/}
                     <div className="mb-2">
                         <Card >
-                            <Card.Header> Upcoming Updates </Card.Header>
+                            <Card.Header as="h5"> Upcoming Updates </Card.Header>
 
                             <Card.Body>
 
@@ -147,16 +147,16 @@ export default function SystemUpdates() {
 
                             </Card.Body>
                         </Card>
-                    </div>
+                    </div> <br></br>
 
 
                     {/* Past Updates*/}
                     <Card>
-                        <Card.Header> Past Updates </Card.Header>
+                        <Card.Header as="h5"> Past Updates </Card.Header>
                         <Card.Body>
 
                             {/* July2021 updates and fixes*/}
-                            <p>  July 2021</p>
+                            <h6>  July 2021</h6>
                             <Button variant="secondary" onClick={JulyUpdatesZero}> 3.0</Button>{' '}
                             <Button variant="secondary" onClick={JulyUpdatesOne}> 3.1</Button>{' '}
                             <Button variant="secondary" onClick={JulyUpdatesTwo}> 3.2</Button>{' '}
@@ -169,7 +169,7 @@ export default function SystemUpdates() {
                             <hr />
 
                             {/* June 2021 updates and fixes*/}
-                            <p>  June 2021</p>
+                            <h6>  June 2021</h6>
                             <Button variant="secondary" onClick={JuneUpdatesZero}> 2.0</Button>{' '}
                             <Button variant="secondary" onClick={JuneUpdatesOne}> 2.1</Button>{' '}
                             <Button variant="secondary" onClick={JuneUpdatesTwo}> 2.2</Button>{' '}
@@ -177,7 +177,7 @@ export default function SystemUpdates() {
                             <hr />
 
                             {/* May 2021 updates and fixes*/}
-                            <p>  May 2021</p>
+                            <h6>  May 2021</h6>
                             <Button variant="secondary" onClick={MayUpdates}> 1.0</Button>{' '}
 
                         </Card.Body>

@@ -4,7 +4,7 @@ export default function Faq() {
 
     return (
         <Card className="mb-5">
-            <Card.Header>Frequently Asked Questions</Card.Header>
+            <Card.Header as="h4">Frequently Asked Questions</Card.Header>
             <Accordion>
                 <Card>
                     <Card.Header>

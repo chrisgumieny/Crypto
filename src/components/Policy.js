@@ -4,7 +4,7 @@ export const Policy = () => {
 
     return (
         <Card>
-            <Card.Header>Privacy Policy</Card.Header>
+            <Card.Header as="h4">Privacy Policy</Card.Header>
             <Accordion>
                 <Card>
                     <Card.Header>

@@ -41,10 +41,10 @@ export default function Profile() {
     return (
         <>
             <Card className="mb-5">
-                <Card.Header as="h2">Profile</Card.Header>
+                <Card.Header as="h4">Profile</Card.Header>
                 <Card.Body>
 
-                    <Card border="dark">
+                    <Card>
                         <Card.Header as="h5">User Information</Card.Header>
                         <Card.Body>
                             Email: {currentUser.email}
@@ -58,14 +58,14 @@ export default function Profile() {
 
                     <br></br>
 
-                    <Card border="dark" >
+                    <Card>
                         {/*Emai Submission Box*/}
                         <EmailSubmission eSubmit={emailSubmit} userEmail={currentUser.email} />
                     </Card>
 
                     <br></br>
 
-                    <Card border="dark">
+                    <Card>
                         <Card.Header as="h5"> Alert Configuration </Card.Header>
                         <Card.Body>
                             <Card.Text>

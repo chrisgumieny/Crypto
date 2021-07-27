@@ -43,9 +43,9 @@ export default function Register() {
         <>
             {/* Card will contain all our log in information  */}
             <Card>
-                <Card.Header>Crypto Pro Register</Card.Header>
+                <Card.Header as="h4">Crypto Pro Register</Card.Header>
                 <Card.Body>
-                    <h2 className="text-center mb-3">Register </h2>
+                    <h5 className="text-center mb-3">Register </h5>
                     {/* {JSON.stringify(currentUser)} to check if working, should get JSON object*/}
                     {/* or currentUSer && currentUser.email to get email, checking to make sure there is
                 current user and checking current users email (firebase kinda does this for u)*/}
@@ -84,7 +84,7 @@ export default function Register() {
                         </div>
 
                         {/* register button, loading because if loading do not want to resubmit form */}
-                        <div className="button">
+                        <div className="button"> <br></br>
                             <Button disabled={loading} className="w-100" type="submit" >Register </Button>
                         </div>
                     </Form>

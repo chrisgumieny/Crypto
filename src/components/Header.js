@@ -92,7 +92,7 @@ export const HeaderToolbar = () => {
                         <NavDropdown title="Cryptocurrency" id="nav-dropdown">
                             <NavDropdown.Item href="/search">Cryptocurrency Search</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="/cryptochart">Cryptocurrency Chart</NavDropdown.Item>
+                            <NavDropdown.Item href="/cryptochart">Cryptocurrency Charts</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 
