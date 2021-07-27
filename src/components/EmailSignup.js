@@ -47,7 +47,7 @@ export const EmailSubmission = (props) => {
     return ( 
         <div>
             <Card>
-                <Card.Header> Email Signup</Card.Header>
+                <Card.Header as="h5"> Email Signup</Card.Header>
                     <Card.Body>
                             <Form onSubmit = {handleEmailSignup}> 
                                 <Form.Group>

@@ -14,25 +14,22 @@ export default function Login() {
     const history = useHistory()
 
     // asyc function that handles submit button
-    async function handleSubmit(e) {
+     function handleSubmit(e) {
         // prevent form from refreshing 
         e.preventDefault()
-        try {
+
             // set error back to empty string 
             setError("")
             // set up loading state (only can create one account at the same time, cant keep clicking submit button)
             setLoading(true)
             // call login function from AuthContext
-            await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/profile")
 
-        }
-        catch {
-            // error message 
-            setError("ERROR: Failed login attempt")
-        }
-        // after all handling is done 
-        setLoading(false)
+            login(emailRef.current.value, passwordRef.current.value)
+            .finally(() => {
+                setLoading(false)
+                history.push("/profile")
+            })
+                
     }
 
 

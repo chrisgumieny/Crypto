@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react"
 import { Card, Form, Alert, Button, } from "react-bootstrap" // npm i bootstrap react-bootstrap
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-import { postUser } from "../services/usersClient"
 
 // function used for register
 
@@ -18,7 +17,7 @@ export default function Register() {
     const history = useHistory()
 
     // asyc function that handles submit button
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
         // prevent form from refreshing 
         e.preventDefault()
 
@@ -27,28 +26,16 @@ export default function Register() {
             // return error 
             return setError("ERROR: Passwords do not match ")
         }
-        try {
-            // set error back to empty string 
-            setError("")
-            // set up loading state (only can create one account at the same time, cant keep clicking submit button)
-            setLoading(true)
-            // call register function from AuthContext
-            const { email, uid } = (await register(emailRef.current.value, passwordRef.current.value)).user
-            await postUser({
-                userid: uid,
-                useremail: email,
-                userphonenumber: phoneNumberRef.current.value
-            })
-            history.push("/profile")
 
-        }
-        catch {
-            // error message 
-            setError("ERROR: Failed to create account")
-        }
-
-        // after all handling is done 
-        setLoading(false)
+        // set error back to empty string 
+        setError("")
+        // set up loading state (only can create one account at the same time, cant keep clicking submit button)
+        setLoading(true)
+        // call register function from AuthContext
+        register(emailRef.current.value, passwordRef.current.value, phoneNumberRef.current.value)
+            .then(() => history.push("/profile"))
+            .catch(err => setError(`${err}`))
+            .finally(() => setLoading(false))
     }
 
 
@@ -80,7 +67,7 @@ export default function Register() {
                             {/* user phone number*/}
                             <Form.Group id="tel">
                                 <Form.Label>Phone Number*</Form.Label>
-                                <Form.Control type="tel" placeholder="111-111-1111" pattern="^(+\d{1,2}\s)?(?\d{3})?[\s.-]\d{3}[\s.-]\d{4}$" ref={phoneNumberRef} required />
+                                <Form.Control type="tel" placeholder="111-111-1111" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" ref={phoneNumberRef} required />
                             </Form.Group>
 
                             {/*user password */}

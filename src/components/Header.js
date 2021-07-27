@@ -39,12 +39,12 @@ export const HeaderToolbar = () => {
                 <Navbar bg="dark" variant="dark" className="text-center"  >
                     {/*<Navbar.Brand href="/home">Crypto Pro</Navbar.Brand> */}
                     {/* Crypto Pro header click -> home  */}
-                    <Navbar.Brand className="p-3" href="/">Crypto Pro</Navbar.Brand>
+                    <Navbar.Brand className="p-3" href="/home">Crypto Pro</Navbar.Brand>
                     <Navbar.Toggle />
 
                     <Nav>
                         <NavDropdown title="Home">
-                            <NavDropdown.Item href="/">Home Page</NavDropdown.Item>
+                            <NavDropdown.Item href="/home">Home Page</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/systemupdates">System Updates</NavDropdown.Item>
                         </NavDropdown>

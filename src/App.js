@@ -41,6 +41,7 @@ function App() {
               <Route path="/systemupdates"> <SystemUpdates /> </Route>
               <Route path="/cryptochart"> <CryptoChart /> </Route>
               <Route path="/policy"> <Policy /> </Route>
+              <Route path="/home"> <Home /> </Route>
               <Route path="/"> <Home /> </Route>
             </Switch>
           </div>
