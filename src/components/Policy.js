@@ -9,7 +9,7 @@ export const Policy = () => {
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="outline-secondary" eventKey="0">
-                        Crypto Pro may use, or disclose the personal information it collects for one or more of the following business purposes:
+                        Crypto Pro may use, or disclose the personal information it collects for one or more of the following business purposes
                         </Accordion.Toggle>
                     </Card.Header>
                         <Accordion.Collapse eventKey="0">

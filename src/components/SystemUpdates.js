@@ -19,9 +19,17 @@ export default function SystemUpdates() {
 
     // June notifications 
     //additions
+
+    const JuneUpdatesZero = () => {
+        toast(
+            'System Update for June 2021: Educational page about Cryptocurrency',
+            { position: toast.POSITION.BOTTOM_CENTER }
+        )
+    }
+
     const JuneUpdatesOne = () => {
         toast(
-            'System Update for June 2021: Educational pages about Cryptocurrency',
+            'System Update for June 2021: Third-Party articles about Cryptocurrency',
             { position: toast.POSITION.BOTTOM_CENTER }
         )
     }
@@ -73,10 +81,40 @@ export default function SystemUpdates() {
         )
     }
 
+    const JulyUpdatesFour = () => {
+        toast(
+            'System Update for July 2021: Users can look at Cryptocurrencies charts  ',
+            { position: toast.POSITION.BOTTOM_CENTER }
+        )
+    }
+
+    const JulyUpdatesFive = () => {
+        toast(
+            'System Update for July 2021: Privacy Agreement on Privacy Policy page   ',
+            { position: toast.POSITION.BOTTOM_CENTER }
+        )
+    }
+
+    const JulyUpdatesSixth = () => {
+        toast(
+            'System Update for July 2021: Users are now able to receive SMS alerts for crypto price changes ',
+            { position: toast.POSITION.BOTTOM_CENTER }
+        )
+    }
+
+
+
     //fixes
     const JulyNotify = () => {
         toast.success(
             'System Fix for July 2021: Bug in Deployment fixed ',
+            { position: toast.POSITION.BOTTOM_CENTER }
+        )
+    }
+
+    const JulyNotifyOne = () => {
+        toast.success(
+            'System Fix for July 2021: Bug in User Profile fixed ',
             { position: toast.POSITION.BOTTOM_CENTER }
         )
     }
@@ -123,14 +161,19 @@ export default function SystemUpdates() {
                             <Button variant="secondary" onClick={JulyUpdatesOne}> 3.1</Button>{' '}
                             <Button variant="secondary" onClick={JulyUpdatesTwo}> 3.2</Button>{' '}
                             <Button variant="secondary" onClick={JulyUpdatesThree}> 3.3</Button>{' '}
-                            <Button variant="secondary" onClick={JulyNotify}> 3.4</Button>{' '}
+                            <Button variant="secondary" onClick={JulyUpdatesFive}> 3.4</Button>{' '}
+                            <Button variant="secondary" onClick={JulyUpdatesFour}> 3.5</Button>{' '}
+                            <Button variant="secondary" onClick={JulyUpdatesSixth}> 3.6</Button>{' '}
+                            <Button variant="secondary" onClick={JulyNotify}> 3.7</Button>{' '}
+                            <Button variant="secondary" onClick={JulyNotifyOne}> 3.8</Button>{' '}
                             <hr />
 
                             {/* June 2021 updates and fixes*/}
                             <p>  June 2021</p>
-                            <Button variant="secondary" onClick={JuneUpdatesOne}> 2.0</Button>{' '}
-                            <Button variant="secondary" onClick={JuneUpdatesTwo}> 2.1</Button>{' '}
-                            <Button variant="secondary" onClick={JuneNotify}> 2.2</Button>{' '}
+                            <Button variant="secondary" onClick={JuneUpdatesZero}> 2.0</Button>{' '}
+                            <Button variant="secondary" onClick={JuneUpdatesOne}> 2.1</Button>{' '}
+                            <Button variant="secondary" onClick={JuneUpdatesTwo}> 2.2</Button>{' '}
+                            <Button variant="secondary" onClick={JuneNotify}> 2.3</Button>{' '}
                             <hr />
 
                             {/* May 2021 updates and fixes*/}
